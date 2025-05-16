@@ -6,7 +6,7 @@ import { UtensilsCrossed } from "lucide-react";
 export default async function MealsPage() {
     const mealNodes = await readMeals();
     return (
-        <div className="w-full max-w-md space-y-6">
+        <div className="m-32 w-full max-w-md space-y-6">
             <div className="flex justify-between items-center">
                 <div className="flex items-center">
                     <UtensilsCrossed className="h-8 w-8 mr-4" />

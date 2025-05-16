@@ -40,7 +40,7 @@ export function AddButton({
             <Plus className="h-4 w-4" />
           </Button>
         </TooltipTrigger>
-        <TooltipContent>
+        <TooltipContent className="font-sans font-bold">
           <p>Add {itemType}</p>
         </TooltipContent>
       </Tooltip>

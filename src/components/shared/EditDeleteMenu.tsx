@@ -50,13 +50,13 @@ export function EditDeleteMenu<T extends { id: number; title: string; descriptio
     <>
       <DropdownMenu>
         <DropdownMenuTrigger
-          className="flex h-8 w-8 items-center justify-center rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+          className="flex h-8 w-8 items-center justify-center rounded-md border hover:bg-muted/50"
           onClick={handleDropdownClick}
         >
           <MoreHorizontal className="h-4 w-4" />
           <span className="sr-only">Open menu</span>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" side="right">
+        <DropdownMenuContent className="font-sans" align="end" side="right">
           <DropdownMenuItem onClick={handleEdit}>
             <Edit className="mr-2 h-4 w-4" />
             <span>Edit</span>

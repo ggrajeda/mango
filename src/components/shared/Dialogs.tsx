@@ -67,7 +67,7 @@ export function AddDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px]" onClick={(e) => e.stopPropagation()}>
+      <DialogContent className="font-sans sm:max-w-[425px]" onClick={(e) => e.stopPropagation()}>
         <form action={formAction}>
           <DialogHeader>
             <DialogTitle>Add New {itemType}</DialogTitle>
@@ -120,6 +120,7 @@ export function AddDialog({
               <Button
                 type="submit"
                 aria-disabled={pending || !!nameError || !itemName.trim() || !!descriptionError || !itemDescription.trim()}
+                className="font-bold"
               >
                 {pending ? `Creating...` : `Create ${itemType}`}
               </Button>
@@ -163,7 +164,7 @@ export function EditDialog<T extends { id: number; title: string; description: s
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px]" onClick={(e) => e.stopPropagation()}>
+      <DialogContent className="font-sans sm:max-w-[425px]" onClick={(e) => e.stopPropagation()}>
         <form action={formAction}>
           <input type="hidden" name="id" value={item.id} />
           <input type="hidden" name="description" value={item.description} />
@@ -197,6 +198,7 @@ export function EditDialog<T extends { id: number; title: string; description: s
             <Button
               type="submit"
               aria-disabled={pending || !!nameError || !itemName.trim()}
+              className="font-bold"
             >
               {pending ? "Saving..." : "Save changes"}
             </Button>
@@ -233,7 +235,7 @@ export function DeleteDialog<T extends { id: number; title: string; description:
 
   return (
     <AlertDialog open={open} onOpenChange={onOpenChange}>
-      <AlertDialogContent onClick={(e) => e.stopPropagation()}>
+      <AlertDialogContent className="font-sans" onClick={(e) => e.stopPropagation()}>
         <form action={formAction}>
           <input type="hidden" name="id" value={item.id} />
           <AlertDialogHeader>
@@ -253,6 +255,7 @@ export function DeleteDialog<T extends { id: number; title: string; description:
             <AlertDialogAction
               type="submit"
               aria-disabled={pending}
+              className="font-bold"
             >
               {pending ? "Deleting..." : "Delete"}
             </AlertDialogAction>

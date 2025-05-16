@@ -23,6 +23,7 @@ interface MealContainerProps {
 const chartConfig = {
     amount: {
         label: "Daily Value %",
+        // TODO: GET --chart-1 COLOR FROM globals.css
         color: "#000000",
     },
 } satisfies ChartConfig
@@ -43,7 +44,7 @@ export default function MealContainer({ mealNode, biteNodes }: MealContainerProp
             <DialogTrigger asChild>
                 <div className="flex justify-center text-left">
                     <div className="relative">
-                        <Card className="hover:shadow-md transition-shadow w-md">
+                        <Card className="hover:bg-muted/50 w-md">
                             <CardHeader>
                                 <CardTitle>{meal.title}</CardTitle>
                                 <CardDescription>{meal.description}</CardDescription>
@@ -60,7 +61,7 @@ export default function MealContainer({ mealNode, biteNodes }: MealContainerProp
                     </div>
                 </div>
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent className="font-sans">
                 <DialogHeader>
                     <DialogTitle>{meal.title}</DialogTitle>
                     <DialogDescription className="mt-4 ml-4">
@@ -101,7 +102,7 @@ export default function MealContainer({ mealNode, biteNodes }: MealContainerProp
                                 cursor={false}
                                 content={<ChartTooltipContent className="w-36" hideLabel />}
                             />
-                            <Bar dataKey="amount" fill="var(--color-amount)" radius={5} />
+                            <Bar dataKey="amount" fill="var(--chart-1)" radius={5} />
                         </BarChart>
                     </ChartContainer>
                 </div>
